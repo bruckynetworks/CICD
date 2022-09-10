@@ -4,7 +4,10 @@ native:
     _operation: replace
     server:
       server-list:
-        - ip-address: 10.3.4.5
-        - ip-address: 10.7.8.9
-        - ip-address: 10.10.10.10          
+        - ip-address: 10.100.100.100
+        - ip-address: 10.200.200.200
+        - ip-address: 10.10.10.10
+        - ip-address: 10.20.20.20
+        - ip-address: 10.30.30.30
+        - ip-address: 10.40.40.40
       _xmlns: 'http://cisco.com/ns/yang/Cisco-IOS-XE-ntp' 

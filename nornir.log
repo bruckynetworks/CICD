@@ -1,1 +1,29 @@
 2022-09-10 12:38:07,779 -  nornir.core -     INFO -        run() - Running task 'get_thing' with args {} on 3 hosts
+2022-09-10 12:50:08,232 -  nornir.core -     INFO -        run() - Running task 'get_thing' with args {} on 3 hosts
+2022-09-10 13:24:16,968 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-10 13:24:16,971 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "edit_config.py", line 14, in edit_nc_config_from_yaml
+    xml = magic_sauce.dict_to_xml(data, root="config")
+NameError: name 'magic_sauce' is not defined
+
+2022-09-10 13:24:16,971 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "edit_config.py", line 14, in edit_nc_config_from_yaml
+    xml = magic_sauce.dict_to_xml(data, root="config")
+NameError: name 'magic_sauce' is not defined
+
+2022-09-10 13:24:16,975 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "edit_config.py", line 14, in edit_nc_config_from_yaml
+    xml = magic_sauce.dict_to_xml(data, root="config")
+NameError: name 'magic_sauce' is not defined
+
+2022-09-10 13:24:33,690 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-10 13:28:06,429 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
