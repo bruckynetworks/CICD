@@ -1,0 +1,10 @@
+native:
+  _xmlns: http://cisco.com/ns/yang/Cisco-IOS-XE-native
+  ntp:
+    _operation: replace
+    server:
+      server-list:
+        - ip-address: 10.3.4.5
+        - ip-address: 10.7.8.9
+        - ip-address: 10.10.10.10      
+      _xmlns: 'http://cisco.com/ns/yang/Cisco-IOS-XE-ntp'  
