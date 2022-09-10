@@ -1,0 +1,13 @@
+---
+iosxe:
+  username: "james"
+  password: "cisco"
+  port: 830
+  platform: "iosxe"
+  connection_options:
+    netconf:
+      extras:
+        hostkey_verify: false
+        timeout: 300
+        allow_agent: false
+        look_for_keys: false
