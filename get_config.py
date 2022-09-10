@@ -9,3 +9,4 @@ def get_thing(task):
 
 results = nr.run(task=get_thing)
 print_result(results)
+print("HELLO")
