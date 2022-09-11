@@ -2114,3 +2114,5 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
 2022-09-11 09:52:07,925 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
 2022-09-11 09:53:09,928 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
 2022-09-11 12:23:49,314 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-11 12:27:07,272 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-11 12:28:08,899 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
