@@ -1,0 +1,21 @@
+---
+LEFT:
+     hostname: "192.168.11.101"
+     groups:
+          - "ios"
+     data:
+          region: "iosxe-region"
+
+CENTRE:
+     hostname: "192.168.11.102"
+     groups:
+          - "ios"
+     data:
+          region: "iosxe-region"
+
+RIGHT:
+     hostname: "192.168.11.103"
+     groups:
+          - "ios"
+     data:
+          region: "iosxe-region"

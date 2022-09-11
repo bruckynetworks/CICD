@@ -1,0 +1,13 @@
+---
+ios:
+  username: "james"
+  password: "cisco"
+  port: 22
+  platform: "ios"
+  connection_options:
+    netconf:
+      extras:
+        hostkey_verify: false
+        timeout: 300
+        allow_agent: false
+        look_for_keys: false

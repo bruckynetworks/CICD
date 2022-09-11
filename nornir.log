@@ -262,3 +262,598 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
 
 
 2022-09-10 15:36:14,378 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-10 16:01:09,511 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-11 06:50:40,934 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-11 06:50:40,943 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/factory.py", line 157, in _get_community_platform_details
+    scrapli_community_platform = importlib.import_module(
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'scrapli_community.iosxe'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/factory.py", line 497, in __new__
+    final_driver, additional_kwargs = cls._get_driver(platform=platform, variant=variant)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/factory.py", line 326, in _get_driver
+    final_driver, additional_kwargs = cls._get_community_driver(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/factory.py", line 288, in _get_community_driver
+    platform_details = _get_community_platform_details(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/factory.py", line 168, in _get_community_platform_details
+    raise ScrapliModuleNotFound(warning) from exc
+scrapli.exceptions.ScrapliModuleNotFound: 
+
+************************************************************ Module not found! *************************************************************
+Scrapli Community platform 'iosxe` not found!
+To resolve this issue, ensure you have the correct platform name, and that a scrapli  community platform of that name exists!
+********************************************************************************************************************************************
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 100, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: Provided platform `iosxe` is not a valid scrapli or napalm platform, or is not a valid scrapli-community platform.
+
+2022-09-11 06:50:40,944 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/factory.py", line 157, in _get_community_platform_details
+    scrapli_community_platform = importlib.import_module(
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'scrapli_community.iosxe'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/factory.py", line 497, in __new__
+    final_driver, additional_kwargs = cls._get_driver(platform=platform, variant=variant)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/factory.py", line 326, in _get_driver
+    final_driver, additional_kwargs = cls._get_community_driver(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/factory.py", line 288, in _get_community_driver
+    platform_details = _get_community_platform_details(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/factory.py", line 168, in _get_community_platform_details
+    raise ScrapliModuleNotFound(warning) from exc
+scrapli.exceptions.ScrapliModuleNotFound: 
+
+************************************************************ Module not found! *************************************************************
+Scrapli Community platform 'iosxe` not found!
+To resolve this issue, ensure you have the correct platform name, and that a scrapli  community platform of that name exists!
+********************************************************************************************************************************************
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 100, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: Provided platform `iosxe` is not a valid scrapli or napalm platform, or is not a valid scrapli-community platform.
+
+2022-09-11 06:50:40,944 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 11, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-11 06:50:40,944 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/factory.py", line 157, in _get_community_platform_details
+    scrapli_community_platform = importlib.import_module(
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'scrapli_community.iosxe'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/factory.py", line 497, in __new__
+    final_driver, additional_kwargs = cls._get_driver(platform=platform, variant=variant)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/factory.py", line 326, in _get_driver
+    final_driver, additional_kwargs = cls._get_community_driver(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/factory.py", line 288, in _get_community_driver
+    platform_details = _get_community_platform_details(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/factory.py", line 168, in _get_community_platform_details
+    raise ScrapliModuleNotFound(warning) from exc
+scrapli.exceptions.ScrapliModuleNotFound: 
+
+************************************************************ Module not found! *************************************************************
+Scrapli Community platform 'iosxe` not found!
+To resolve this issue, ensure you have the correct platform name, and that a scrapli  community platform of that name exists!
+********************************************************************************************************************************************
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 100, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: Provided platform `iosxe` is not a valid scrapli or napalm platform, or is not a valid scrapli-community platform.
+
+2022-09-11 06:50:40,944 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 11, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-11 06:50:40,945 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 11, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-11 06:56:33,146 -  nornir.core -     INFO -        run() - Running task 'get_thing' with args {} on 3 hosts
+2022-09-11 06:56:47,083 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-11 06:57:54,620 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-11 06:57:55,730 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 44, in netconf_edit_config
+    result = manager.edit_config(config, target=target, default_operation=default_operation)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/operations/edit.py", line 76, in request
+    return self._request(node)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/operations/rpc.py", line 375, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: inconsistent value: Device refused one or more commands
+
+2022-09-11 06:57:55,730 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "bnc_edit_config.py", line 16, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-11 06:57:55,976 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 44, in netconf_edit_config
+    result = manager.edit_config(config, target=target, default_operation=default_operation)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/operations/edit.py", line 76, in request
+    return self._request(node)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/operations/rpc.py", line 375, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: inconsistent value: Device refused one or more commands
+
+2022-09-11 06:57:55,976 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "bnc_edit_config.py", line 16, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-11 06:57:56,129 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 44, in netconf_edit_config
+    result = manager.edit_config(config, target=target, default_operation=default_operation)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/operations/edit.py", line 76, in request
+    return self._request(node)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/operations/rpc.py", line 375, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: inconsistent value: Device refused one or more commands
+
+2022-09-11 06:57:56,130 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "bnc_edit_config.py", line 16, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-11 06:58:47,399 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-11 06:58:48,461 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 44, in netconf_edit_config
+    result = manager.edit_config(config, target=target, default_operation=default_operation)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/operations/edit.py", line 76, in request
+    return self._request(node)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/operations/rpc.py", line 375, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: inconsistent value: Device refused one or more commands
+
+2022-09-11 06:58:48,461 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "bnc_edit_config.py", line 16, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-11 06:58:48,462 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 44, in netconf_edit_config
+    result = manager.edit_config(config, target=target, default_operation=default_operation)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/operations/edit.py", line 76, in request
+    return self._request(node)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/operations/rpc.py", line 375, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: inconsistent value: Device refused one or more commands
+
+2022-09-11 06:58:48,462 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "bnc_edit_config.py", line 16, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-11 06:58:48,696 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 44, in netconf_edit_config
+    result = manager.edit_config(config, target=target, default_operation=default_operation)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/operations/edit.py", line 76, in request
+    return self._request(node)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/operations/rpc.py", line 375, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: inconsistent value: Device refused one or more commands
+
+2022-09-11 06:58:48,696 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "bnc_edit_config.py", line 16, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-11 07:00:48,024 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-11 07:01:12,130 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-11 07:01:13,204 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 44, in netconf_edit_config
+    result = manager.edit_config(config, target=target, default_operation=default_operation)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/operations/edit.py", line 76, in request
+    return self._request(node)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/operations/rpc.py", line 375, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: inconsistent value: Device refused one or more commands
+
+2022-09-11 07:01:13,205 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "bnc_edit_config.py", line 16, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-11 07:01:13,294 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 44, in netconf_edit_config
+    result = manager.edit_config(config, target=target, default_operation=default_operation)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/operations/edit.py", line 76, in request
+    return self._request(node)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/operations/rpc.py", line 375, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: inconsistent value: Device refused one or more commands
+
+2022-09-11 07:01:13,295 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "bnc_edit_config.py", line 16, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-11 07:01:13,449 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 44, in netconf_edit_config
+    result = manager.edit_config(config, target=target, default_operation=default_operation)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/operations/edit.py", line 76, in request
+    return self._request(node)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/operations/rpc.py", line 375, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: inconsistent value: Device refused one or more commands
+
+2022-09-11 07:01:13,450 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "bnc_edit_config.py", line 16, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-11 07:03:27,156 -  nornir.core -     INFO -        run() - Running task 'get_thing' with args {} on 3 hosts
+2022-09-11 07:05:47,596 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-11 07:05:47,607 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "bnc_edit_config.py", line 13, in edit_nc_config_from_yaml
+    data = yaml.load(f)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/main.py", line 434, in load
+    return constructor.get_single_data()
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 119, in get_single_data
+    node = self.composer.get_single_node()
+  File "_ruamel_yaml.pyx", line 706, in _ruamel_yaml.CParser.get_single_node
+  File "_ruamel_yaml.pyx", line 724, in _ruamel_yaml.CParser._compose_document
+  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
+  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
+  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
+  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
+  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
+  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
+  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 891, in _ruamel_yaml.CParser._compose_mapping_node
+  File "_ruamel_yaml.pyx", line 904, in _ruamel_yaml.CParser._parse_next_event
+ruamel.yaml.parser.ParserError: while parsing a block mapping
+  in "host_vars/CENTRE.yaml", line 18, column 13
+did not find expected key
+  in "host_vars/CENTRE.yaml", line 21, column 13
+
+2022-09-11 07:05:47,608 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "bnc_edit_config.py", line 13, in edit_nc_config_from_yaml
+    data = yaml.load(f)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/main.py", line 434, in load
+    return constructor.get_single_data()
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 119, in get_single_data
+    node = self.composer.get_single_node()
+  File "_ruamel_yaml.pyx", line 706, in _ruamel_yaml.CParser.get_single_node
+  File "_ruamel_yaml.pyx", line 724, in _ruamel_yaml.CParser._compose_document
+  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
+  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
+  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
+  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
+  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
+  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
+  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 891, in _ruamel_yaml.CParser._compose_mapping_node
+  File "_ruamel_yaml.pyx", line 904, in _ruamel_yaml.CParser._parse_next_event
+ruamel.yaml.parser.ParserError: while parsing a block mapping
+  in "host_vars/LEFT.yaml", line 18, column 13
+did not find expected key
+  in "host_vars/LEFT.yaml", line 21, column 13
+
+2022-09-11 07:05:47,609 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "bnc_edit_config.py", line 13, in edit_nc_config_from_yaml
+    data = yaml.load(f)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/main.py", line 434, in load
+    return constructor.get_single_data()
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 119, in get_single_data
+    node = self.composer.get_single_node()
+  File "_ruamel_yaml.pyx", line 706, in _ruamel_yaml.CParser.get_single_node
+  File "_ruamel_yaml.pyx", line 724, in _ruamel_yaml.CParser._compose_document
+  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
+  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
+  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
+  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
+  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
+  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
+  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 891, in _ruamel_yaml.CParser._compose_mapping_node
+  File "_ruamel_yaml.pyx", line 904, in _ruamel_yaml.CParser._parse_next_event
+ruamel.yaml.parser.ParserError: while parsing a block mapping
+  in "host_vars/RIGHT.yaml", line 18, column 13
+did not find expected key
+  in "host_vars/RIGHT.yaml", line 21, column 13
+
+2022-09-11 07:06:36,023 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-11 07:06:36,026 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "bnc_edit_config.py", line 13, in edit_nc_config_from_yaml
+    data = yaml.load(f)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/main.py", line 434, in load
+    return constructor.get_single_data()
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 121, in get_single_data
+    return self.construct_document(node)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 131, in construct_document
+    for _dummy in generator:
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 674, in construct_yaml_map
+    value = self.construct_mapping(node)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 445, in construct_mapping
+    return BaseConstructor.construct_mapping(self, node, deep=deep)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 263, in construct_mapping
+    if self.check_mapping_key(node, key_node, mapping, key, value):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 294, in check_mapping_key
+    raise DuplicateKeyError(*args)
+ruamel.yaml.constructor.DuplicateKeyError: while constructing a mapping
+  in "host_vars/LEFT.yaml", line 18, column 13
+found duplicate key "ip" with value "10.0.0.0" (original value: "0.0.0.0")
+  in "host_vars/LEFT.yaml", line 21, column 13
+
+To suppress this check see:
+    http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys
+
+
+2022-09-11 07:06:36,027 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "bnc_edit_config.py", line 13, in edit_nc_config_from_yaml
+    data = yaml.load(f)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/main.py", line 434, in load
+    return constructor.get_single_data()
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 121, in get_single_data
+    return self.construct_document(node)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 131, in construct_document
+    for _dummy in generator:
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 674, in construct_yaml_map
+    value = self.construct_mapping(node)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 445, in construct_mapping
+    return BaseConstructor.construct_mapping(self, node, deep=deep)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 263, in construct_mapping
+    if self.check_mapping_key(node, key_node, mapping, key, value):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 294, in check_mapping_key
+    raise DuplicateKeyError(*args)
+ruamel.yaml.constructor.DuplicateKeyError: while constructing a mapping
+  in "host_vars/CENTRE.yaml", line 18, column 13
+found duplicate key "ip" with value "10.0.0.0" (original value: "0.0.0.0")
+  in "host_vars/CENTRE.yaml", line 21, column 13
+
+To suppress this check see:
+    http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys
+
+
+2022-09-11 07:06:36,029 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "bnc_edit_config.py", line 13, in edit_nc_config_from_yaml
+    data = yaml.load(f)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/main.py", line 434, in load
+    return constructor.get_single_data()
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 121, in get_single_data
+    return self.construct_document(node)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 131, in construct_document
+    for _dummy in generator:
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 674, in construct_yaml_map
+    value = self.construct_mapping(node)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 445, in construct_mapping
+    return BaseConstructor.construct_mapping(self, node, deep=deep)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 263, in construct_mapping
+    if self.check_mapping_key(node, key_node, mapping, key, value):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ruamel/yaml/constructor.py", line 294, in check_mapping_key
+    raise DuplicateKeyError(*args)
+ruamel.yaml.constructor.DuplicateKeyError: while constructing a mapping
+  in "host_vars/RIGHT.yaml", line 18, column 13
+found duplicate key "ip" with value "10.0.0.0" (original value: "0.0.0.0")
+  in "host_vars/RIGHT.yaml", line 21, column 13
+
+To suppress this check see:
+    http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys
+
+
+2022-09-11 07:07:06,169 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-11 07:35:30,393 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts

@@ -2,7 +2,7 @@ from nornir import InitNornir
 from nornir_netconf.plugins.tasks import netconf_get_config
 from nornir_utils.plugins.functions import print_result
 
-nr = InitNornir(config_file="inventory/config.yaml")
+nr = InitNornir(config_file="nc_inventory/nc_config.yaml")
 
 def get_thing(task):
     task.run(task=netconf_get_config, source="running", filter_type="xpath",
@@ -10,4 +10,4 @@ def get_thing(task):
 
 results = nr.run(task=get_thing)
 print_result(results)
-print("HELLO")
+

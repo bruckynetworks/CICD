@@ -1,0 +1,13 @@
+---
+
+inventory:
+    plugin: SimpleInventory
+    options:
+        host_file: "scrap_inventory/scrap_hosts.yaml"
+        group_file: "scrap_inventory/scrap_groups.yaml"
+        defaults_file: "scrap_inventory/scrap_defaults.yaml"
+
+runners:
+    plugin: threaded
+    options:
+        num_workers: 10

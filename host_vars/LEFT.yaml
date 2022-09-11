@@ -15,9 +15,12 @@ native:
         process-id:
           id: '10'
           network:
-            ip: 0.0.0.0
-            wildcard: 255.255.255.255
-            area: '0'
+            - ip: 0.0.0.0
+              wildcard: 255.255.255.255
+              area: '0'
+            - ip: 10.0.0.0
+              wildcard: 0.255.255.255
+              area: '0'           
       _xmlns: 'http://cisco.com/ns/yang/Cisco-IOS-XE-ospf'
     ospf:
       id: '10'
