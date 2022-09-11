@@ -6,7 +6,7 @@ nr = InitNornir(config_file="scrap_inventory/scrap_config.yaml")
 
 def pull_info(task):
     """
-    Pull OSPF Info and Parse and add text
+    Pull OSPF Info and Parse
     """
     result = task.run(task=send_command, command="show ip ospf neighbor")
     task.host["facts"] = result.scrapli_response.genie_parse_output()
