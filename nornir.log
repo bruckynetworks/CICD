@@ -1236,3 +1236,128 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
 
 
 2022-09-11 09:09:17,112 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-11 09:11:12,743 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-11 09:12:14,209 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-11 09:12:14,534 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2022-09-11 09:12:14,534 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 11, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-11 09:12:14,559 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2022-09-11 09:12:14,559 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 11, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-11 09:12:14,572 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2022-09-11 09:12:14,572 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 11, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+

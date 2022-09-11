@@ -32,6 +32,4 @@ native:
       compatible:
         rfc1583: ''
       _xmlns: 'http://cisco.com/ns/yang/Cisco-IOS-XE-ospf'
-      
-
 
