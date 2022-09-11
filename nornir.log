@@ -2116,3 +2116,217 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
 2022-09-11 12:23:49,314 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
 2022-09-11 12:27:07,272 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
 2022-09-11 12:28:08,899 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-11 12:36:08,179 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-11 12:37:09,766 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-11 14:13:30,317 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-11 14:13:30,472 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-11 14:13:30,473 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-11 14:13:30,473 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "bnc_edit_config.py", line 20, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-11 14:13:30,473 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "bnc_edit_config.py", line 20, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-11 14:13:30,523 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-11 14:13:30,525 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "bnc_edit_config.py", line 20, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-11 14:14:31,010 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-11 14:14:35,600 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-09-11 14:14:35,600 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 11, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-11 14:14:35,609 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-09-11 14:14:35,609 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 11, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-11 14:14:35,620 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-09-11 14:14:35,621 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 11, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+

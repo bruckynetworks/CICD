@@ -1,7 +1,7 @@
 ---
 ios:
-  username: "james"
-  password: "cisco"
+#  username: "james"
+#  password: "cisco"
   port: 22
   platform: "ios"
   connection_options:
