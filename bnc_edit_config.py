@@ -2,6 +2,7 @@
 edit config, using just yaml files
 """
 
+import os
 from nornir import InitNornir
 from nornir_netconf.plugins.tasks import netconf_edit_config
 from nornir_utils.plugins.functions import print_result
