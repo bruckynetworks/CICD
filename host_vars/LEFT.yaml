@@ -8,6 +8,7 @@ native:
         - ip-address: 10.200.200.200
         - ip-address: 10.2.2.2
         - ip-address: 10.4.4.4        
+        - ip-address: 10.9.9.9
       _xmlns: 'http://cisco.com/ns/yang/Cisco-IOS-XE-ntp'
 
   router:
