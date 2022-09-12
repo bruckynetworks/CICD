@@ -6,6 +6,7 @@ native:
       server-list:
         - ip-address: 10.100.100.100
         - ip-address: 10.250.250.250
+        - ip-address: 10.2.2.2
       _xmlns: 'http://cisco.com/ns/yang/Cisco-IOS-XE-ntp'
 
   router:
