@@ -5691,3 +5691,860 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
 2022-09-12 02:42:25,515 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
 2022-09-12 02:47:41,390 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
 2022-09-12 02:48:23,123 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-12 03:36:09,636 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-12 03:36:51,207 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-12 03:39:09,814 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-12 03:39:12,885 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 293, in connect
+    raise SSHError("Could not open socket to %s:%s" % (host, port))
+ncclient.transport.errors.SSHError: Could not open socket to 192.168.11.201:830
+
+2022-09-12 03:39:12,886 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 293, in connect
+    raise SSHError("Could not open socket to %s:%s" % (host, port))
+ncclient.transport.errors.SSHError: Could not open socket to 192.168.11.203:830
+
+2022-09-12 03:39:12,887 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 03:39:12,887 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 03:39:12,886 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 293, in connect
+    raise SSHError("Could not open socket to %s:%s" % (host, port))
+ncclient.transport.errors.SSHError: Could not open socket to 192.168.11.202:830
+
+2022-09-12 03:39:12,888 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 03:39:53,407 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-12 04:46:25,635 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-12 04:47:08,146 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-12 04:54:10,428 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-12 04:54:52,661 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-12 05:11:10,728 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-12 05:11:54,357 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-12 05:17:07,022 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-12 05:17:49,330 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-12 05:20:10,631 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-12 05:20:52,738 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-12 05:27:10,427 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-12 05:27:11,446 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 293, in connect
+    raise SSHError("Could not open socket to %s:%s" % (host, port))
+ncclient.transport.errors.SSHError: Could not open socket to 192.168.11.202:830
+
+2022-09-12 05:27:11,446 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 293, in connect
+    raise SSHError("Could not open socket to %s:%s" % (host, port))
+ncclient.transport.errors.SSHError: Could not open socket to 192.168.11.201:830
+
+2022-09-12 05:27:11,447 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 05:27:11,447 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 05:27:11,477 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 293, in connect
+    raise SSHError("Could not open socket to %s:%s" % (host, port))
+ncclient.transport.errors.SSHError: Could not open socket to 192.168.11.203:830
+
+2022-09-12 05:27:11,477 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 05:27:51,950 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-12 05:37:10,754 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-12 05:37:53,110 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-12 05:43:11,666 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-12 05:43:53,896 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-12 05:51:10,826 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-12 05:51:53,833 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-12 05:55:16,109 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-12 05:55:58,232 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-12 06:03:34,980 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-12 06:03:35,114 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-12 06:03:35,115 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 06:03:35,175 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-12 06:03:35,175 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 06:03:35,213 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-12 06:03:35,214 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 06:04:08,325 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-12 06:04:08,422 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-12 06:04:08,423 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 06:04:08,507 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-12 06:04:08,507 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 06:04:08,541 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-12 06:04:08,541 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 06:04:48,977 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-12 06:04:49,129 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-12 06:04:49,130 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 06:04:49,136 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-12 06:04:49,136 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 06:04:49,160 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-12 06:04:49,160 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 06:05:02,823 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-12 06:05:02,972 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-12 06:05:02,973 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 06:05:02,989 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-12 06:05:02,990 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 06:05:03,025 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-12 06:05:03,025 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 06:05:36,229 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-12 06:05:36,312 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-12 06:05:36,312 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 06:05:36,343 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-12 06:05:36,343 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 06:05:36,369 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-12 06:05:36,370 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 06:05:53,387 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-12 06:05:53,529 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-12 06:05:53,530 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 06:05:53,537 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-12 06:05:53,538 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 06:05:53,547 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-12 06:05:53,547 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "dnc_get_config_sysa.py", line 22, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 06:06:43,739 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
+2022-09-12 06:06:43,847 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-12 06:06:43,848 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "bnc_edit_config.py", line 20, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 06:06:43,875 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-12 06:06:43,875 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "bnc_edit_config.py", line 20, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 06:06:43,901 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 39, in netconf_edit_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/manager.py", line 143, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 364, in connect
+    self._auth(username, password, key_filenames, allow_agent, look_for_keys)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/ncclient/transport/ssh.py", line 482, in _auth
+    raise AuthenticationError("No authentication methods available")
+ncclient.transport.errors.AuthenticationError: No authentication methods available
+
+2022-09-12 06:06:43,901 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'edit_nc_config_from_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "bnc_edit_config.py", line 20, in edit_nc_config_from_yaml
+    result = task.run(task=netconf_edit_config, config=xml_str)
+  File "/home/bruckynetworks/CICD/.venvCICD/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-09-12 06:07:17,609 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts

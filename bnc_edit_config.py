@@ -22,7 +22,7 @@ def edit_nc_config_from_yaml(task):
 
 
 def main():
-    nr = InitNornir(config_file="nc_inventory/nc_config.yaml")    
+    nr = InitNornir(config_file="nc_test_inventory/test_config.yaml")    
     results = nr.run(task=edit_nc_config_from_yaml)      
     print_result(results)
 

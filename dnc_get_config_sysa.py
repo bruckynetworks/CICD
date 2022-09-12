@@ -27,7 +27,7 @@ def main():
     config_file = sys.argv[1]
     nr = InitNornir(config_file=config_file)
     nr.inventory.defaults.username = os.getenv("USERNAME")
-    nr.inventory.defaults.password = os.getenv("PASSWORD")    
+    nr.inventory.defaults.password = os.getenv("PASSWORD")
     results = nr.run(task=edit_nc_config_from_yaml)
     print_result(results)
 

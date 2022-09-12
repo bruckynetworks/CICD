@@ -1,6 +1,5 @@
 ---
 iosxe:
-
   port: 830
   platform: "iosxe"
   connection_options:
