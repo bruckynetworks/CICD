@@ -5691,3 +5691,1124 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
 2022-09-12 02:42:25,515 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
 2022-09-12 02:47:41,390 -  nornir.core -     INFO -        run() - Running task 'edit_nc_config_from_yaml' with args {} on 3 hosts
 2022-09-12 02:48:23,123 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-12 12:51:39,297 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-12 12:51:39,562 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2022-09-12 12:51:39,562 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2022-09-12 12:51:39,563 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2022-09-12 12:51:39,563 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-12 12:51:39,563 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-12 12:51:39,563 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-12 13:13:28,396 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-12 13:13:28,430 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 157, in _get_community_platform_details
+    scrapli_community_platform = importlib.import_module(
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'scrapli_community.iosxe'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 497, in __new__
+    final_driver, additional_kwargs = cls._get_driver(platform=platform, variant=variant)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 326, in _get_driver
+    final_driver, additional_kwargs = cls._get_community_driver(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 288, in _get_community_driver
+    platform_details = _get_community_platform_details(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 168, in _get_community_platform_details
+    raise ScrapliModuleNotFound(warning) from exc
+scrapli.exceptions.ScrapliModuleNotFound: 
+
+************************************************** Module not found! ***************************************************
+Scrapli Community platform 'iosxe` not found!
+To resolve this issue, ensure you have the correct platform name, and that a scrapli  community platform of that name exists!
+************************************************************************************************************************
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 100, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: Provided platform `iosxe` is not a valid scrapli or napalm platform, or is not a valid scrapli-community platform.
+
+2022-09-12 13:13:28,430 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 157, in _get_community_platform_details
+    scrapli_community_platform = importlib.import_module(
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'scrapli_community.iosxe'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 497, in __new__
+    final_driver, additional_kwargs = cls._get_driver(platform=platform, variant=variant)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 326, in _get_driver
+    final_driver, additional_kwargs = cls._get_community_driver(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 288, in _get_community_driver
+    platform_details = _get_community_platform_details(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 168, in _get_community_platform_details
+    raise ScrapliModuleNotFound(warning) from exc
+scrapli.exceptions.ScrapliModuleNotFound: 
+
+************************************************** Module not found! ***************************************************
+Scrapli Community platform 'iosxe` not found!
+To resolve this issue, ensure you have the correct platform name, and that a scrapli  community platform of that name exists!
+************************************************************************************************************************
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 100, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: Provided platform `iosxe` is not a valid scrapli or napalm platform, or is not a valid scrapli-community platform.
+
+2022-09-12 13:13:28,430 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 157, in _get_community_platform_details
+    scrapli_community_platform = importlib.import_module(
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'scrapli_community.iosxe'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 497, in __new__
+    final_driver, additional_kwargs = cls._get_driver(platform=platform, variant=variant)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 326, in _get_driver
+    final_driver, additional_kwargs = cls._get_community_driver(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 288, in _get_community_driver
+    platform_details = _get_community_platform_details(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 168, in _get_community_platform_details
+    raise ScrapliModuleNotFound(warning) from exc
+scrapli.exceptions.ScrapliModuleNotFound: 
+
+************************************************** Module not found! ***************************************************
+Scrapli Community platform 'iosxe` not found!
+To resolve this issue, ensure you have the correct platform name, and that a scrapli  community platform of that name exists!
+************************************************************************************************************************
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 100, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: Provided platform `iosxe` is not a valid scrapli or napalm platform, or is not a valid scrapli-community platform.
+
+2022-09-12 13:13:28,431 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-12 13:13:28,431 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-12 13:13:28,431 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-12 13:13:41,918 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-12 13:13:41,922 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 157, in _get_community_platform_details
+    scrapli_community_platform = importlib.import_module(
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'scrapli_community.iosxe'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 497, in __new__
+    final_driver, additional_kwargs = cls._get_driver(platform=platform, variant=variant)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 326, in _get_driver
+    final_driver, additional_kwargs = cls._get_community_driver(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 288, in _get_community_driver
+    platform_details = _get_community_platform_details(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 168, in _get_community_platform_details
+    raise ScrapliModuleNotFound(warning) from exc
+scrapli.exceptions.ScrapliModuleNotFound: 
+
+************************************************** Module not found! ***************************************************
+Scrapli Community platform 'iosxe` not found!
+To resolve this issue, ensure you have the correct platform name, and that a scrapli  community platform of that name exists!
+************************************************************************************************************************
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 100, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: Provided platform `iosxe` is not a valid scrapli or napalm platform, or is not a valid scrapli-community platform.
+
+2022-09-12 13:13:41,922 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 157, in _get_community_platform_details
+    scrapli_community_platform = importlib.import_module(
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'scrapli_community.iosxe'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 497, in __new__
+    final_driver, additional_kwargs = cls._get_driver(platform=platform, variant=variant)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 326, in _get_driver
+    final_driver, additional_kwargs = cls._get_community_driver(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 288, in _get_community_driver
+    platform_details = _get_community_platform_details(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 168, in _get_community_platform_details
+    raise ScrapliModuleNotFound(warning) from exc
+scrapli.exceptions.ScrapliModuleNotFound: 
+
+************************************************** Module not found! ***************************************************
+Scrapli Community platform 'iosxe` not found!
+To resolve this issue, ensure you have the correct platform name, and that a scrapli  community platform of that name exists!
+************************************************************************************************************************
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 100, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: Provided platform `iosxe` is not a valid scrapli or napalm platform, or is not a valid scrapli-community platform.
+
+2022-09-12 13:13:41,922 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 157, in _get_community_platform_details
+    scrapli_community_platform = importlib.import_module(
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'scrapli_community.iosxe'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 497, in __new__
+    final_driver, additional_kwargs = cls._get_driver(platform=platform, variant=variant)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 326, in _get_driver
+    final_driver, additional_kwargs = cls._get_community_driver(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 288, in _get_community_driver
+    platform_details = _get_community_platform_details(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 168, in _get_community_platform_details
+    raise ScrapliModuleNotFound(warning) from exc
+scrapli.exceptions.ScrapliModuleNotFound: 
+
+************************************************** Module not found! ***************************************************
+Scrapli Community platform 'iosxe` not found!
+To resolve this issue, ensure you have the correct platform name, and that a scrapli  community platform of that name exists!
+************************************************************************************************************************
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 100, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: Provided platform `iosxe` is not a valid scrapli or napalm platform, or is not a valid scrapli-community platform.
+
+2022-09-12 13:13:41,922 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-12 13:13:41,923 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-12 13:13:41,923 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-12 13:14:05,000 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-12 13:14:05,004 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 157, in _get_community_platform_details
+    scrapli_community_platform = importlib.import_module(
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'scrapli_community.iosxe'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 497, in __new__
+    final_driver, additional_kwargs = cls._get_driver(platform=platform, variant=variant)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 326, in _get_driver
+    final_driver, additional_kwargs = cls._get_community_driver(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 288, in _get_community_driver
+    platform_details = _get_community_platform_details(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 168, in _get_community_platform_details
+    raise ScrapliModuleNotFound(warning) from exc
+scrapli.exceptions.ScrapliModuleNotFound: 
+
+************************************************** Module not found! ***************************************************
+Scrapli Community platform 'iosxe` not found!
+To resolve this issue, ensure you have the correct platform name, and that a scrapli  community platform of that name exists!
+************************************************************************************************************************
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 100, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: Provided platform `iosxe` is not a valid scrapli or napalm platform, or is not a valid scrapli-community platform.
+
+2022-09-12 13:14:05,004 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 157, in _get_community_platform_details
+    scrapli_community_platform = importlib.import_module(
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'scrapli_community.iosxe'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 497, in __new__
+    final_driver, additional_kwargs = cls._get_driver(platform=platform, variant=variant)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 326, in _get_driver
+    final_driver, additional_kwargs = cls._get_community_driver(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 288, in _get_community_driver
+    platform_details = _get_community_platform_details(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 168, in _get_community_platform_details
+    raise ScrapliModuleNotFound(warning) from exc
+scrapli.exceptions.ScrapliModuleNotFound: 
+
+************************************************** Module not found! ***************************************************
+Scrapli Community platform 'iosxe` not found!
+To resolve this issue, ensure you have the correct platform name, and that a scrapli  community platform of that name exists!
+************************************************************************************************************************
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 100, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: Provided platform `iosxe` is not a valid scrapli or napalm platform, or is not a valid scrapli-community platform.
+
+2022-09-12 13:14:05,005 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-12 13:14:05,005 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 157, in _get_community_platform_details
+    scrapli_community_platform = importlib.import_module(
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'scrapli_community.iosxe'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 497, in __new__
+    final_driver, additional_kwargs = cls._get_driver(platform=platform, variant=variant)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 326, in _get_driver
+    final_driver, additional_kwargs = cls._get_community_driver(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 288, in _get_community_driver
+    platform_details = _get_community_platform_details(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/factory.py", line 168, in _get_community_platform_details
+    raise ScrapliModuleNotFound(warning) from exc
+scrapli.exceptions.ScrapliModuleNotFound: 
+
+************************************************** Module not found! ***************************************************
+Scrapli Community platform 'iosxe` not found!
+To resolve this issue, ensure you have the correct platform name, and that a scrapli  community platform of that name exists!
+************************************************************************************************************************
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 100, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: Provided platform `iosxe` is not a valid scrapli or napalm platform, or is not a valid scrapli-community platform.
+
+2022-09-12 13:14:05,005 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-12 13:14:05,005 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-12 13:15:26,021 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-12 13:15:30,437 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-09-12 13:15:30,437 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-12 13:15:30,439 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-09-12 13:15:30,439 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-12 13:15:30,458 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-09-12 13:15:30,458 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-12 13:15:33,592 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-12 13:15:37,954 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-09-12 13:15:37,954 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-12 13:15:37,987 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-09-12 13:15:37,988 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-12 13:15:38,014 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-09-12 13:15:38,014 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-12 13:16:13,934 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-12 13:16:18,296 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-09-12 13:16:18,297 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-12 13:16:18,321 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-09-12 13:16:18,322 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-12 13:16:18,337 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-09-12 13:16:18,337 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-12 13:16:51,037 -  nornir.core -     INFO -        run() - Running task 'pull_info' with args {} on 3 hosts
+2022-09-12 13:16:55,397 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-09-12 13:16:55,397 - nornir.core.task -    ERROR -      start() - Host 'LEFT': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-12 13:16:55,413 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-09-12 13:16:55,413 - nornir.core.task -    ERROR -      start() - Host 'RIGHT': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-09-12 13:16:55,436 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2022-09-12 13:16:55,436 - nornir.core.task -    ERROR -      start() - Host 'CENTRE': task 'pull_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "zscrap_testospf.py", line 17, in pull_info
+    result = task.run(task=send_command, command="show ip ospf neighbor")
+  File "/home/jellybean/.envone/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
