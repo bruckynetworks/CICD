@@ -5,7 +5,11 @@ native:
     server:
       server-list:
         - ip-address: 10.100.100.100
+<<<<<<< HEAD
         - ip-address: 10.200.200.200
+=======
+        - ip-address: 10.250.250.250
+>>>>>>> 5ab522b8d98411263613375446a1344124d049c4
         - ip-address: 10.2.2.2
       _xmlns: 'http://cisco.com/ns/yang/Cisco-IOS-XE-ntp'
 
