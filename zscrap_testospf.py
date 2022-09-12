@@ -1,7 +1,13 @@
+import os
+import sys
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_command
 
-nr = InitNornir(config_file="scrap_inventory/scrap_config.yaml")
+
+config_file= sys.argv[1]
+nr = InitNornir(config_file=config_file)
+nr.inventory.defaults.username = os.getenv("USERNAME")
+nr.inventory.defaults.password = os.getenv("PASSWORD") 
 
 
 def pull_info(task):

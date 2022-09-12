@@ -1,7 +1,6 @@
 ---
 iosxe:
-#  username: "james"
-#  password: "cisco"
+
   port: 830
   platform: "iosxe"
   connection_options:

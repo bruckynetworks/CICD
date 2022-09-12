@@ -1,6 +1,6 @@
 ---
 LEFT:
-     hostname: "192.168.11.101"
+     hostname: "192.168.11.201"
      port: 830
      groups:
           - "iosxe"
@@ -8,7 +8,7 @@ LEFT:
           region: "iosxe-region"
 
 CENTRE:
-     hostname: "192.168.11.102"
+     hostname: "192.168.11.202"
      port: 830
      groups:
           - "iosxe"
@@ -16,7 +16,7 @@ CENTRE:
           region: "iosxe-region"
 
 RIGHT:
-     hostname: "192.168.11.103"
+     hostname: "192.168.11.203"
      port: 830
      groups:
           - "iosxe"

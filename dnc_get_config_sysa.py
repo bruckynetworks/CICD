@@ -2,6 +2,8 @@
 edit config, using just yaml files
 """
 
+import os
+import sys
 from nornir import InitNornir
 from nornir_netconf.plugins.tasks import netconf_edit_config
 from nornir_utils.plugins.functions import print_result
@@ -22,8 +24,11 @@ def edit_nc_config_from_yaml(task):
 
 
 def main():
-    nr = InitNornir(config_file="nc_inventory/nc_config.yaml")    
-    results = nr.run(task=edit_nc_config_from_yaml)      
+    config_file = sys.argv[1]
+    nr = InitNornir(config_file=config_file)
+    nr.inventory.defaults.username = os.getenv("USERNAME")
+    nr.inventory.defaults.password = os.getenv("PASSWORD")    
+    results = nr.run(task=edit_nc_config_from_yaml)
     print_result(results)
 
 

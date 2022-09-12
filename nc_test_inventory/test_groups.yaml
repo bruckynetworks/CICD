@@ -1,8 +1,8 @@
 ---
-ios:
+iosxe:
 
-  port: 22
-  platform: "ios"
+  port: 830
+  platform: "iosxe"
   connection_options:
     netconf:
       extras:

@@ -1,0 +1,13 @@
+---
+
+inventory:
+    plugin: SimpleInventory
+    options:
+        host_file: "nc_test_inventory/test_hosts.yaml"
+        group_file: "nc_test_inventory/test_groups.yaml"
+        defaults_file: "nc_test_inventory/test_defaults.yaml"
+
+runners:
+    plugin: threaded
+    options:
+        num_workers: 10
